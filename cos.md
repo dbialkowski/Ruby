@@ -108,25 +108,29 @@ ilość różnych słów w bazie:  253854
 	
 	db.text8.aggregate([ {$group:{ _id:"$word", count:{$sum:1}}}, {$sort: {count: -1}}, {$limit:1} ])
 	
-najczęstsze słowo:  { "result" : [ { "_id" : "the", "count" : 1061396 } ], "ok" : 1 }
+najczęstsze słowo:  
+	{ "result" : [ { "_id" : "the", "count" : 1061396 } ], "ok" : 1 }
 	
 	
 	db.text8.aggregate([ {$group:{_id:"$word", count:{$sum:1}}}, {$sort: {count: -1}}, {$limit:10}, {$group:{_id: null, count:{$sum:"$count"}}} ])
 	
 	
-10 najczęstszych słów:  { "result" : [ { "_id" : null, "count" : 4205965 } ], "ok" : 1 }
+10 najczęstszych słów:  
+	{ "result" : [ { "_id" : null, "count" : 4205965 } ], "ok" : 1 }
 	
 	
 	db.text8.aggregate([ {$group:{_id:"$word", count:{$sum:1}}}, {$sort: {count: -1}}, {$limit:100}, {$group:{_id: null, count:{$sum:"$count"}}} ])
 	
 	
-100 najczęstszych słów:  { "result" : [ { "_id" : null, "count" : 7998978 } ], "ok" : 1 }
+100 najczęstszych słów:  
+	{ "result" : [ { "_id" : null, "count" : 7998978 } ], "ok" : 1 }
 	
 	
 	db.text8.aggregate([ {$group:{_id:"$word", count:{$sum:1}}}, {$sort: {count: -1}}, {$limit:1000}, {$group:{_id: null, count:{$sum:"$count"}}} ])
 	
 	
-1000 najczęstszych słów:  { "result" : [ { "_id" : null, "count" : 11433354 } ], "ok" : 1 }
+1000 najczęstszych słów:  
+	{ "result" : [ { "_id" : null, "count" : 11433354 } ], "ok" : 1 }
 
 
 
