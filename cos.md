@@ -86,7 +86,9 @@ mongo import:
 	
 	
 real	15m30.141s
+
 user	1m7.095s
+
 sys	0m14.205s
 
 
